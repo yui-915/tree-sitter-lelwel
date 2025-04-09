@@ -473,7 +473,7 @@
     },
     "Str": {
       "type": "PATTERN",
-      "value": "'([^']|\\\\')*'"
+      "value": "'([^'\\n]|\\\\')*'"
     },
     "Predicate": {
       "type": "PATTERN",

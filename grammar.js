@@ -80,7 +80,7 @@ module.exports = grammar({
     Tilde: _ => '~',
 
     Id: _ => /[a-zA-Z][a-zA-Z_0-9]*/,
-    Str: _ => /'([^']|\\')*'/,
+    Str: _ => /'([^'\n]|\\')*'/,
 
     Predicate: _ => /\?([0-9]+|t)/,
     Action: _ => /#[0-9]+/,

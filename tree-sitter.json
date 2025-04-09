@@ -10,8 +10,9 @@
         "llw"
       ],
       "injection-regex": "^lelwel$",
-      "class-name": "TreeSitterLelwel"
-    }
+      "class-name": "TreeSitterLelwel",
+      "highlights": "queries/highlights.scm"
+     }
   ],
   "metadata": {
     "version": "0.1.0",
