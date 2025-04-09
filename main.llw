@@ -1,0 +1,28 @@
+token Plus='+' Minus='-' Star='*' Slash='/';
+
+token Semi=';';
+token Number='<number>';
+token Whitespace;
+
+skip Whitespace;
+
+start file;
+
+file:
+  stmt*
+;
+
+stmt:
+  stmt_let
+| stmt_exit
+;
+
+expr:
+  expr ('*' | '/') expr @expr_binary
+| expr ('+' | '-') expr @expr_binary
+| expr_literal ^
+;
+
+expr_literal:
+  Number
+;
