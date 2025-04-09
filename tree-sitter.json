@@ -1,0 +1,38 @@
+{
+  "$schema": "https://tree-sitter.github.io/tree-sitter/assets/schemas/config.schema.json",
+  "grammars": [
+    {
+      "name": "lelwel",
+      "camelcase": "Lelwel",
+      "title": "Lelwel",
+      "scope": "source.lelwel",
+      "file-types": [
+        "llw"
+      ],
+      "injection-regex": "^lelwel$",
+      "class-name": "TreeSitterLelwel"
+    }
+  ],
+  "metadata": {
+    "version": "0.1.0",
+    "license": "MIT",
+    "description": "Lelwel grammar for tree-sitter",
+    "authors": [
+      {
+        "name": "yui-915"
+      }
+    ],
+    "links": {
+      "repository": "https://github.com/yui-915/tree-sitter-lelwel"
+    }
+  },
+  "bindings": {
+    "c": true,
+    "go": true,
+    "node": true,
+    "python": true,
+    "rust": true,
+    "swift": true,
+    "zig": false
+  }
+}
