@@ -255,20 +255,11 @@
       ]
     },
     "concat": {
-      "type": "SEQ",
-      "members": [
-        {
-          "type": "SYMBOL",
-          "name": "postfix"
-        },
-        {
-          "type": "REPEAT",
-          "content": {
-            "type": "SYMBOL",
-            "name": "postfix"
-          }
-        }
-      ]
+      "type": "REPEAT1",
+      "content": {
+        "type": "SYMBOL",
+        "name": "postfix"
+      }
     },
     "postfix": {
       "type": "CHOICE",
