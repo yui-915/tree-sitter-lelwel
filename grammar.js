@@ -23,25 +23,56 @@ module.exports = grammar({
       $.skip_decl,
     ),
 
-    start_decl: $ => seq($.Start, $.Id, $.Semi),
+    start_decl: $ => seq(
+      $.Start,
+      $.Id,
+      $.Semi
+    ),
 
-    right_decl: $ => seq($.Right, repeat1(choice($.Id, $.Str)), $.Semi),
+    right_decl: $ => seq(
+      $.Right,
+      repeat1(choice($.Id, $.Str)),
+      $.Semi
+    ),
 
-    skip_decl: $ => seq($.Skip, repeat1(choice($.Id, $.Str)), $.Semi),
+    skip_decl: $ => seq(
+      $.Skip,
+      repeat1(choice($.Id, $.Str)),
+      $.Semi
+    ),
 
-    token_list: $ => seq($.Token, repeat1($.token_decl), $.Semi),
+    token_list: $ => seq(
+      $.Token,
+      repeat1($.token_decl),
+      $.Semi
+    ),
 
-    token_decl: $ => seq($.Id, optional(seq($.Equal, $.Str))),
+    token_decl: $ => seq(
+      $.Id,
+      optional(seq($.Equal, $.Str))
+    ),
 
-    rule_decl: $ => seq($.Id, optional($.Hat), $.Colon, optional($.regex), $.Semi),
+    rule_decl: $ => seq(
+      $.Id,
+      optional($.Hat),
+      $.Colon,
+      optional($.regex),
+      $.Semi,
+    ),
 
     regex: $ => $.alternation,
 
-    alternation: $ => seq($.ordered_choice, optional(repeat1(seq($.Or, $.ordered_choice)))),
+    alternation: $ => seq(
+      $.ordered_choice,
+      repeat(seq($.Or, $.ordered_choice))
+    ),
 
-    ordered_choice: $ => seq($.concat, optional(repeat1(seq($.Slash, $.concat)))),
+    ordered_choice: $ => seq(
+      $.concat,
+      repeat(seq($.Slash, $.concat))
+    ),
 
-    concat: $ => seq($.postfix, optional(repeat1($.postfix))),
+    concat: $ => repeat1($.postfix),
 
     postfix: $ => choice(
       seq($.postfix, $.Star),

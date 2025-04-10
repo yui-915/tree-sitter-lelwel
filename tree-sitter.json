@@ -11,7 +11,7 @@
       ],
       "injection-regex": "^lelwel$",
       "class-name": "TreeSitterLelwel",
-      "highlights": "queries/highlights.scm"
+      "highlights": "queries/lelwel/highlights.scm"
      }
   ],
   "metadata": {

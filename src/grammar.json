@@ -212,28 +212,20 @@
           "name": "ordered_choice"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT1",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "Or"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "ordered_choice"
-                  }
-                ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "Or"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "ordered_choice"
               }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+            ]
+          }
         }
       ]
     },
@@ -245,28 +237,20 @@
           "name": "concat"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT1",
-              "content": {
-                "type": "SEQ",
-                "members": [
-                  {
-                    "type": "SYMBOL",
-                    "name": "Slash"
-                  },
-                  {
-                    "type": "SYMBOL",
-                    "name": "concat"
-                  }
-                ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SEQ",
+            "members": [
+              {
+                "type": "SYMBOL",
+                "name": "Slash"
+              },
+              {
+                "type": "SYMBOL",
+                "name": "concat"
               }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+            ]
+          }
         }
       ]
     },
@@ -278,19 +262,11 @@
           "name": "postfix"
         },
         {
-          "type": "CHOICE",
-          "members": [
-            {
-              "type": "REPEAT1",
-              "content": {
-                "type": "SYMBOL",
-                "name": "postfix"
-              }
-            },
-            {
-              "type": "BLANK"
-            }
-          ]
+          "type": "REPEAT",
+          "content": {
+            "type": "SYMBOL",
+            "name": "postfix"
+          }
         }
       ]
     },
